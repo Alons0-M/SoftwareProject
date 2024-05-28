@@ -6,7 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.sql.*;
 
-public class HomePage implements ActionListener{
+public class experiment10 implements ActionListener{
 
 	JFrame frame;
 	

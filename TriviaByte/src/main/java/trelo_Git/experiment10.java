@@ -38,7 +38,7 @@ public class Experiment10 implements ActionListener{
 	JButton SumitButton = new JButton("Sumit");
 	JButton ResetButton = new JButton("Sumit");
 	
-	HomePage() {
+	Experiment10() {
 		createWindow();
 		setLocationAndSize();
 		addComponentsToFrame();
@@ -47,12 +47,12 @@ public class Experiment10 implements ActionListener{
 	
 	public void createWindow() {
 		frame = new JFrame();
-		frame.SetBounds(50, 10, 1000, 1000);
-		frame.SetContentPane().setBackground(Color.white);
-		frame.SetContentPane().setLayout(null);
-		frame.SetVisible(true);
-		frame.SetDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.SetResizable(true);
+		frame.setBounds(50, 10, 1000, 1000);
+		frame.setBackground(Color.white);
+		frame.setLayout(null);
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(true);
 	}
 	public void setLocationAndSize() {
 		Title.setBounds(300, 2, 400, 40);
@@ -158,15 +158,64 @@ public class Experiment10 implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==SumitButton) {
 			try {
-				Connection conni=DriveManager.getConnection("");
-				PreparedStatement=connl.prepareStatement();
+				Connection connl = DriverManager.getConnection("", "root", "");
+				PreparedStatement Pstatement = connl.prepareStatement("insert into User values(?, ?, ?, ?, ?, ?, ?, ?)");
 				
+				Pstatement.setString(1, prnTextField.getText());
+				Pstatement.setString(2, addressTextArea.getText());
+				Pstatement.setString(3, emailTextField.getText());
+				Pstatement.setString(4, contactTextField.getText());
+				Pstatement.setString(5, nameTextField.getText());
+				Pstatement.setString(6, className.getSelectedItem().toString();
+				Pstatement.setString(7, branchname.getSelectedItem().toString();
+				Pstatement.setString(8, passwordField.getText()); //?
+				
+				String prn = prnTextField.getText();
+				String pass = passwordField.getText();
+				String email = emailTextField.getText();
+				String classname = className.getSelectedItem().toString();
+				String branch = branchname.getSelectedItem().toString();
+				
+				if (prn.equals("")) {
+					JOptionPane.showMessageDialog(null, "UseId is Missing"); 
+				}else if(pass.equals("")) {
+					JOptionPane.showMessageDialog(null, "Password is Missing"); 
+				}else if(email.equals("")) {
+					JOptionPane.showMessageDialog(null, "Email is Missing"); 
+				}
+				
+				Statement stat = connl.createStatement();
+				
+				String query = "SELECT * FROM User";
+				ResultSet rs = stat.executeQuery(query);
+				
+				while(rs.next()) {
+					String UserId = rs.getString("PRN");
+					String Password = rs.getString("Password");
+					
+					if((UserId.equals(prn) || Password.equals(pass))) {
+						JOptionPane.showMessageDialog(null, "UseId Already Exists"); 
+					}else {
+						Pstatement.executeUpdate();
+						JOptionPane.showMessageDialog(null, "UseId Registered Sucessfully"); 
+						frame.setVisible(false);
+					}
+				}if(!rs.next()) {
+					Pstatement.executeUpdate();
+					JOptionPane.showMessageDialog(null, "UseId Registered Sucessfully"); 
+				}
+			}catch (SQLException el) {
+				el.printStackTrace();
 			}
+		}if(e.getSource() == ResetButton) {
+			prnTextField.setText("");
+			nameTextField.setText("");
+			addressTextArea.setText("");
+			contactTextField.setText("");
+			className.setSelectedItem("");
+			branchname.setSelectedItem("");
+			passwordField.setText("");
+			emailTextField.setText("");
 		}
-	}
-	
-	
-	
-	
-
+	}	
 }

@@ -6,7 +6,7 @@ import java.awt.Font;
 import javax.swing.*;
 import java.sql.*;
 
-public class homePage implements ActionListener{
+public class HomePage implements ActionListener{
     static String prn = null;
     JFrame frame;
     JLabel welcome = new JLabel("WELCOME TO TRIVIABYTES. The coolest. The simplest");
@@ -30,7 +30,7 @@ public class homePage implements ActionListener{
     Icon quiz;
     JLabel image = new JLabel();
 
-    homePage(){
+    HomePage(){
         createWindow();
         setLocationAndSize();
         addComponentsToFrame();

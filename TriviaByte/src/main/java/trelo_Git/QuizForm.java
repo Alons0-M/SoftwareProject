@@ -102,9 +102,25 @@ public class QuizForm implements ActionListener
                 answer = "d. Container";
             }
 
-                                    
+            if (answer == "c. Panel"){
+                JOptionPane.showMessageDialog(null, "Wait for result");
+                JOptionPane.showMessageDialog(null, "Wrong answer!");
+                count += 1;
+                QuizForm quizForm = new QuizForm(count);
+                frame.setVisible(false);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Wait for result");
+                JOptionPane.showMessageDialog(null, "Wrong answer!");                
+                QuizForm quizForm = new QuizForm(count);
+                frame.setVisible(false);
+            }                       
         }
     }
+}
 
-
+class main1{
+    public static void main(String[] args) {
+        QuizForm quizForm = new QuizForm();
+    }
 }

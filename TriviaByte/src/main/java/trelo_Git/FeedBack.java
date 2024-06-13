@@ -29,6 +29,7 @@ public class FeedBack implements ActionListener{
     JButton submitButton = new JButton("Submit");
     JLabel image = new JLabel();
     Icon p;
+    String CAMBRIA = "Cambria";
 
 
     FeedBack(){
@@ -51,31 +52,32 @@ public class FeedBack implements ActionListener{
 
     public void setLocationAndSize(){
         Title.setBounds(100, 50, 800, 40);
-        Title.setFont(new Font("Cambria", Font.CENTER_BASELINE, 25));
+        Title.setFont(new Font(CAMBRIA, Font.CENTER_BASELINE, 25));
         Title.setBackground(Color.white);
         Title.setForeground(Color.blue);
 
         PRNLabel.setBounds(500, 200, 200, 40);
-        PRNLabel.setFont(new Font("Cambria", Font.CENTER_BASELINE, 25));
+        PRNLabel.setFont(new Font(CAMBRIA, Font.CENTER_BASELINE, 25));
         PRNLabel.setBackground(Color.white);
         PRNLabel.setForeground(Color.blue);
         
         PRNTextField.setBounds(500, 250, 300, 40);
-        PRNTextField.setFont(new Font("Cambria", Font.CENTER_BASELINE, 25));
+        PRNTextField.setFont(new Font(CAMBRIA, Font.CENTER_BASELINE, 25));
         PRNTextField.setBackground(Color.white);
         
         feedBack.setBounds(500, 300, 400, 40);
-        feedBack.setFont(new Font("Cambria", Font.CENTER_BASELINE, 20));
+        feedBack.setFont(new Font(CAMBRIA, Font.CENTER_BASELINE, 20));
         feedBack.setBackground(Color.white);
         feedBack.setForeground(Color.blue);
 
         fd.setBounds(500,350,800,80);
-        fd.setFont(new Font("Cambria", Font.CENTER_BASELINE, 25));
+        fd.setFont(new Font(CAMBRIA, Font.CENTER_BASELINE, 25));
         fd.setBackground(Color.white);
 
-        p = new ImageIcon("C:\\TriviaBytes\\TriviaByte\\PHOTOS\\Feedback-en-una-reunion-de-trabajo.png");
+        p = new ImageIcon("PHOTOS\\Feedback-en-una-reunion-de-trabajo.png");
 
-        image.setBounds(5, 5, 1254, 836);
+        image.setBounds(5, 5, 1500, 1000); // Adjust the width and height as needed
+
         image.setIcon(p);
         submitButton.setBounds(500, 450, 200, 40);
     }   
@@ -124,11 +126,5 @@ public class FeedBack implements ActionListener{
         }
         else JOptionPane.showMessageDialog(null, "Invalid PRN");
     }
-
-class Main9{
-    public void main(String[] args) {
-        FeedBack fb = new FeedBack();
-    }
-}
 
 }

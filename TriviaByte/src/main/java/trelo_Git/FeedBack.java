@@ -126,7 +126,7 @@ public class FeedBack implements ActionListener{
     }
 
 class Main9{
-    public static void main(String[] args) {
+    public void main(String[] args) {
         FeedBack fb = new FeedBack();
     }
 }

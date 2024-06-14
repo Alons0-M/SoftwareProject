@@ -97,7 +97,7 @@ public class HomePage implements ActionListener{
         welcome.setBackground(Color.lightGray);
         welcome.setFont(new Font("Arial", Font.CENTER_BASELINE, 18));
 
-        quiz = new ImageIcon("C:\\Users\\USER\\Desktop\\UNI\\23-24\\2.INTRODUCTION_TO_SOFTWARE_ENGINEERING\\triviaBytes_quiz_gpt\\logoPhotoQuiz.jpg");
+        quiz = new ImageIcon("\\TriviaByte\\PHOTOS\\quizLogo.jpg");
 
         image.setBounds(95,90,1024,761);
         image.setIcon(quiz);

@@ -33,10 +33,10 @@ public class Experiment10 implements ActionListener{
 	String[] Class = {"FY", "SY", "TY", "Final"};	
 	
 	JComboBox className = new JComboBox(Class);
-	JComboBox branchname = new JComboBox(Class);
+	JComboBox branchname = new JComboBox(branch);
 	
-	JButton SumitButton = new JButton("Sumit");
-	JButton ResetButton = new JButton("Sumit");
+	JButton SumitButton = new JButton("Submit");
+	JButton ResetButton = new JButton("Reset");
 	
 	Experiment10() {
 		createWindow();
@@ -47,13 +47,15 @@ public class Experiment10 implements ActionListener{
 	
 	public void createWindow() {
 		frame = new JFrame();
+		frame.setTitle("Students detail forms");
 		frame.setBounds(50, 10, 1000, 1000);
 		frame.setBackground(Color.white);
-		frame.setLayout(null);
+		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(true);
 	}
+	
 	public void setLocationAndSize() {
 		Title.setBounds(300, 2, 400, 40);
 		Title.setBackground(Color.white);
@@ -131,6 +133,7 @@ public class Experiment10 implements ActionListener{
 		ResetButton.setBackground(Color.white);
 		ResetButton.setFont(new Font("Cambria", Font.CENTER_BASELINE, 18));
 	}
+	 	
 	public void addComponentsToFrame() {
 		frame.add(Title);
 		frame.add(prnLabel);
@@ -144,6 +147,7 @@ public class Experiment10 implements ActionListener{
 		frame.add(branchLabel);
 		frame.add(branchname);
 		frame.add(contactLabel);
+		frame.add(contactTextField);
 		frame.add(addressLabel);
 		frame.add(addressTextArea);
 		frame.add(SumitButton);
@@ -151,10 +155,12 @@ public class Experiment10 implements ActionListener{
 		frame.add(classLabel);
 		frame.add(className);
 	}
+	
 	public void actionEvent() {
 		SumitButton.addActionListener(this);
 		ResetButton.addActionListener(this);
 	}
+	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==SumitButton) {
 			try {
@@ -166,8 +172,8 @@ public class Experiment10 implements ActionListener{
 				Pstatement.setString(3, emailTextField.getText());
 				Pstatement.setString(4, contactTextField.getText());
 				Pstatement.setString(5, nameTextField.getText());
-				Pstatement.setString(6, className.getSelectedItem().toString();
-				Pstatement.setString(7, branchname.getSelectedItem().toString();
+				Pstatement.setString(6, className.getSelectedItem().toString());
+				Pstatement.setString(7, branchname.getSelectedItem().toString());
 				Pstatement.setString(8, passwordField.getText()); //?
 				
 				String prn = prnTextField.getText();
@@ -202,7 +208,7 @@ public class Experiment10 implements ActionListener{
 					}
 				}if(!rs.next()) {
 					Pstatement.executeUpdate();
-					JOptionPane.showMessageDialog(null, "UseId Registered Sucessfully"); 
+					JOptionPane.showMessageDialog(null, "UserId Registered Sucessfully"); 
 				}
 			}catch (SQLException el) {
 				el.printStackTrace();

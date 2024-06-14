@@ -69,7 +69,7 @@ public class QuizForm implements ActionListener
     public void addComponentsToFrame()
     {
         frame.add(Title);
-        frame.add(question);
+        frame.add(question1);
         frame.add(answer1);
         frame.add(answer2);
         frame.add(answer3);
@@ -106,13 +106,13 @@ public class QuizForm implements ActionListener
                 JOptionPane.showMessageDialog(null, "Wait for result");
                 JOptionPane.showMessageDialog(null, "Wrong answer!");
                 count += 1;
-                QuizForm quizForm = new QuizForm(count);
+                QuizForm2 quizForm2 = new QuizForm2(count);
                 frame.setVisible(false);
             }
             else {
                 JOptionPane.showMessageDialog(null, "Wait for result");
                 JOptionPane.showMessageDialog(null, "Wrong answer!");                
-                QuizForm quizForm = new QuizForm(count);
+                QuizForm quizForm2 = new QuizForm2(count);
                 frame.setVisible(false);
             }                       
         }

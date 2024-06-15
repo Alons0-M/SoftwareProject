@@ -2,12 +2,14 @@ package trelo_Git;
 
 import javax.swing.*;
 import java.awt.event.*;
-import java.beans.Statement;
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.awt.*;
+
+
 
 public class PasswordReset implements ActionListener{
     JFrame frame;
@@ -22,7 +24,7 @@ public class PasswordReset implements ActionListener{
     JTextField repasswordField = new JPasswordField();
     JTextField prnTextField = new JTextField();
     
-    JButton ChangeButton = new JButton("Change");
+    JButton changeButton = new JButton("Change");
     
     PasswordReset() {
         createWindow();
@@ -78,8 +80,8 @@ public class PasswordReset implements ActionListener{
         repasswordField.setBackground(Color.white);
         repasswordField.setFont(new Font("Cambria", Font.CENTER_BASELINE, 18));
         
-        ChangeButton.setBounds(300, 490, 200, 40);
-        ChangeButton.setFont(new Font("Cambria", Font.CENTER_BASELINE, 18));
+        changeButton.setBounds(300, 490, 200, 40);
+        changeButton.setFont(new Font("Cambria", Font.CENTER_BASELINE, 18));
     }
 
     public void addComponentsToFrame() {
@@ -92,15 +94,15 @@ public class PasswordReset implements ActionListener{
     frame.add(changepassField);
     frame.add(repassLabel);
     frame.add(repasswordField);
-    frame.add(ChangeButton);
+    frame.add(changeButton);
 }
 
 public void actionEvent() {
-    ChangeButton.addActionListener(this);
+    changeButton.addActionListener(this);
 }
 
 public void actionPerformed(ActionEvent e) {
-    if (e.getSource() == ChangeButton) {
+    if (e.getSource() == changeButton) {
         try {
             // Creating Connector Object
             Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/sit", "root", "");
@@ -153,11 +155,5 @@ public void actionPerformed(ActionEvent e) {
             }
         }
 
-    }
-}
-class Main3
-{
-    public static void main(String[] args) {
-        PassChange pc = new PassChange();
     }
 }

@@ -19,20 +19,11 @@ To set up and run TriviaTech on your local machine, follow these steps:
 git clone https://github.com/yourusername/triviatech.git
 cd triviatech
 
-markdown
-Copiar código
-
 2. Compile the Java files:
 javac -d bin src/trelo_Git/*.java
 
-markdown
-Copiar código
-
 3. Run the game:
 java -cp bin trelo_Git.Main
-
-vbnet
-Copiar código
 
 ## Usage
 
@@ -91,6 +82,6 @@ Feel free to contribute to TriviaTech by adding new features, fixing bugs, or im
 For any questions or suggestions, please contact [your email].
 
 
-Annotations, we had a problem with the final project, since we could not connect it with a data base, that makes the classes of the password etc not able to compare it with nothing, though not knowing if the password is correct if the user is logged in.
+Annotations, we had a problem with the final project, since we could not connect it with a data base, that makes the classes of the password etc not able to compare it with anything, therefore not knowing if the password is correct if the user is logged in.
 
-That makes the project useless if we execute all in once, but if we execute the classes separately, it should be working
+That makes the project useless if we execute all in once, but if we execute the classes separately, it should be working.

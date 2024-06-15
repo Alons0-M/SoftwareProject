@@ -125,11 +125,11 @@ public class Experiment10 implements ActionListener{
 		classLabel.setBackground(Color.white);
 		classLabel.setFont(new Font("Cambria", Font.CENTER_BASELINE, 18));
 		
-		SumitButton.setBounds(300, 870, 100, 40);
+		SumitButton.setBounds(100, 870, 100, 40);
 		SumitButton.setBackground(Color.white);
 		SumitButton.setFont(new Font("Cambria", Font.CENTER_BASELINE, 18));
 		
-		ResetButton.setBounds(300, 870, 100, 40);
+		ResetButton.setBounds(100, 870, 100, 40);
 		ResetButton.setBackground(Color.white);
 		ResetButton.setFont(new Font("Cambria", Font.CENTER_BASELINE, 18));
 	}

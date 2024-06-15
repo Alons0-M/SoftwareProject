@@ -1,3 +1,5 @@
+package trelo_Git;
+
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
@@ -106,21 +108,15 @@ public class QuizForm implements ActionListener
                 JOptionPane.showMessageDialog(null, "Wait for result");
                 JOptionPane.showMessageDialog(null, "Wrong answer!");
                 count += 1;
-                QuizForm2 quizForm2 = new QuizForm2(count);
+                QuizForm quizForm = new QuizForm();
                 frame.setVisible(false);
             }
             else {
                 JOptionPane.showMessageDialog(null, "Wait for result");
                 JOptionPane.showMessageDialog(null, "Wrong answer!");                
-                QuizForm quizForm2 = new QuizForm2(count);
+                QuizForm quizForm2 = new QuizForm();
                 frame.setVisible(false);
             }                       
         }
-    }
-}
-
-class main1{
-    public static void main(String[] args) {
-        QuizForm quizForm = new QuizForm();
     }
 }

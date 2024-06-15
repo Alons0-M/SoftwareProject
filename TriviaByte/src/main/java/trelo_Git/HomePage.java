@@ -119,86 +119,64 @@ public class HomePage implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        switch (e.getSource()){
-            case menuItem:
-            Experiment10 e1 = new Experiment10();
-            break;
-
-            case menuItem2:
-            Login l1 = new Login();
-            frame.setVisible(false);
-            break;
-
-            case menuItem3():
-            prn = JOptionPane.showInputDialog("Enter your PRN");
-            try{
-                //create connection
-                Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/rit", "root", "");
-                
-                //check password match
-                Statement stmt = conn1.createStatement();
-
-                String query = "SELECT PRN FROM LOGIN";
-                ResultSet rs = stmt.executeQuery(query);
-                
-                while(rs.next()){
-                    String UserId = rs.getString("PRN");
-                    
-                    if(UserId.equals(prn)){
-                        JOptionPane.showMessageDialog(null, "GOOD LUCK, you MAY need it");
-                        Quiz1 q = new Quiz1();
-                        frame.setVisible(false);
-                    }
-                    else
-                    {
-                        JOptionPane.showMessageDialog(null, "User is not logged");
-                        break;
-                    }
-                }
+        if(e.getSource() == menuItem) {
+        	Experiment10 exp = new Experiment10();
+        }
+        
+        if(e.getSource() == menuItem2) {
+        	LoginPage lg1 = new LoginPage();
+        }
+        
+        if(e.getSource() == menuItem3) {
+        	prn = JOptionPane.showInputDialog("Enter your PRN");
+        	try {
+        		Connection conn1 = DriverManager.getConnection("jdbc:://localhost:3306/rit", "root", "");
+        		Statement stmt = conn1.createStatement();
+        		
+        		String query = "Select PRN FROM Login";
+        		ResultSet rs = stmt.executeQuery(query);
+        		
+        		while(rs.next()) {
+        			String UserId = rs.getString("PRN");
+        			
+        			if(UserId.equals(prn)) {
+        				JOptionPane.showMessageDialog(null,  "Good luck");
+        				QuizForm q = new QuizForm();
+        				frame.setVisible(false);
+        			}
+        			else {
+        				JOptionPane.showMessageDialog(null, "User not logged in");
+        			}
+        		}
+        		}
+            catch(Exception ex) {
+            	ex.printStackTrace();
             }
-            catch(Exception ex){
-                ex.printStackTrace();
+        }
+        if(e.getSource() == menuItem5) {
+        	try {
+        		Connection conn1 = DriverManager.getConnection("jdbc:://localhost:3306/rit", "root", "");
+        		Statement stmt = conn1.createStatement();
+        		
+        		String query = "Select PRN FROM Login";
+        		ResultSet rs = stmt.executeQuery(query);
+        		
+        		while(rs.next()) {
+        			prn = rs.getString("PRN");
+        			PreparedStatement pst = conn1.prepareStatement("Delete from login where PRN '" + prn + "'");
+        			pst.execute();
+        			frame.setVisible(false);
+        			JOptionPane.showMessageDialog(null, "Logout successful");
+        		}
+        		}
+            catch(Exception ex) {
+            	ex.printStackTrace();
             }
-            break;
-            
-            case menuItem4:
-            try{
-                Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/rit", "root", "");
-                Statement stmt = conn1.createStatement();
-
-                String query = "Select PRN from login";
-                ResultSet rs = stmt.executeQuery(query);
-
-                while(rs.next()){
-                    prn = rs.getString("PRN");
-                    PreparedStatement pst = conn1.prepareStatement("Delete from login where PRN '" +prn+ "'");
-                    pst.execute();
-                    frame.setVisible(false);
-                    JOptionPane.showMessageDialog(null, "Come back soon");
-                }
-            }
-
-            catch(Exception ex){
-                ex.printStackTrace();
-            }
-            frame.setVisible(false);
-            break;
-
-            case menuItem5:
-            PassChange pc = new PassChange();
-            break;
-
-            case menuItem6:
-            FeedBack fd = new FeedBack();
-            frame.setVisible(false);
-            break;
+        }
+        if(e.getSource() == menuItem6) {
+        	FeedBack fd = new FeedBack();
+        	frame.setVisible(false);
         }
     }
-}
 
-
-class Main2{
-    public static void main(String args[]){
-        homePage h = new homePage();
-    }
 }

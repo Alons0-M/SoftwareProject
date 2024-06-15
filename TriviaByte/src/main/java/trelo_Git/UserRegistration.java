@@ -1,3 +1,4 @@
+/*
 package trelo_Git;
 
 import java.awt.Color;
@@ -30,7 +31,7 @@ public class UserRegistration implements ActionListener {
 
     
     String[] branch = {"CSIT", "CSE", "ETC", "Electrical", "Mechanical", "Civil", "Automobile", "Mechatronics"};
-    String[] Class = {"FY", "SY", "TY", "Final"};
+    String[] classLevels = {"FY", "SY", "TY", "Final"};
     JComboBoxclassName = new JComboBox(Class);
     JComboBox branchname = new JComboBox(branch);
 
@@ -61,11 +62,11 @@ public class UserRegistration implements ActionListener {
         Title.setFont (new Font ("Cambria" , Font. CENTER_BASELINE, 25));
         
         prnLabel. setBounds (300, 50, 400, 40);
-        prnLabel. setBackground (Color. vhite);
-        pinLabel. setFont (new Font ("Cambria", Font. CENTER_BASELINE, 18));
+        prnLabel. setBackground (Color.white);
+        prnLabel. setFont (new Font ("Cambria", Font. CENTER_BASELINE, 18));
         
         prnTextField. setBounds (300, 100, 400, 40);
-        prnTextField. setBackground (Color. vhite);
+        prnTextField. setBackground (Color.white);
         prnTextField.setFont (new Font ("Cambria", Font. CENTER_BASELINE, 18));
         
         nameLabel. setBounds (300, 150, 400, 40);
@@ -97,7 +98,7 @@ public class UserRegistration implements ActionListener {
         classLabel. setFont (new Font ("Cambria", Font. CENTER_BASELINE, 18));
         
         className.setBounds (300, 500, 400, 40);
-        className.setBackground (Color. vhite);
+        className.setBackground (Color.white);
         className. setFont (new Font ("Cambria", Font. CENTER_BASELINE, 18));
 
         branchLabel.setBounds(300, 550, 400, 40);
@@ -249,3 +250,5 @@ public class UserRegistration implements ActionListener {
     }
 }
 }
+
+*/

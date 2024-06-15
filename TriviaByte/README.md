@@ -89,3 +89,8 @@ Feel free to contribute to TriviaTech by adding new features, fixing bugs, or im
 ## Contact
 
 For any questions or suggestions, please contact [your email].
+
+
+Annotations, we had a problem with the final project, since we could not connect it with a data base, that makes the classes of the password etc not able to compare it with nothing, though not knowing if the password is correct if the user is logged in.
+
+That makes the project useless if we execute all in once, but if we execute the classes separately, it should be working
